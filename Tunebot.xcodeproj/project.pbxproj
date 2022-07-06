@@ -11,6 +11,9 @@
 		F5A167D3286F6962003120D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A167D2286F6962003120D2 /* ContentView.swift */; };
 		F5A167D5286F6967003120D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A167D4286F6967003120D2 /* Assets.xcassets */; };
 		F5A167D8286F6967003120D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A167D7286F6967003120D2 /* Preview Assets.xcassets */; };
+		F5A167E3286F6DDA003120D2 /* Tesseract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A167E2286F6DDA003120D2 /* Tesseract.swift */; };
+		F5A167E628762759003120D2 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = F5A167E528762759003120D2 /* Logging */; };
+		F5A167E9287628D3003120D2 /* Puppy in Frameworks */ = {isa = PBXBuildFile; productRef = F5A167E8287628D3003120D2 /* Puppy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,7 @@
 		F5A167D2286F6962003120D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5A167D4286F6967003120D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5A167D7286F6967003120D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5A167E2286F6DDA003120D2 /* Tesseract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tesseract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A167E628762759003120D2 /* Logging in Frameworks */,
+				F5A167E9287628D3003120D2 /* Puppy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,7 @@
 		F5A167CF286F6962003120D2 /* Tunebot */ = {
 			isa = PBXGroup;
 			children = (
+				F5A167E1286F6DCD003120D2 /* Core */,
 				F5A167D0286F6962003120D2 /* TunebotApp.swift */,
 				F5A167D2286F6962003120D2 /* ContentView.swift */,
 				F5A167D4286F6967003120D2 /* Assets.xcassets */,
@@ -65,6 +72,14 @@
 				F5A167D7286F6967003120D2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5A167E1286F6DCD003120D2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F5A167E2286F6DDA003120D2 /* Tesseract.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +98,10 @@
 			dependencies = (
 			);
 			name = Tunebot;
+			packageProductDependencies = (
+				F5A167E528762759003120D2 /* Logging */,
+				F5A167E8287628D3003120D2 /* Puppy */,
+			);
 			productName = Tunebot;
 			productReference = F5A167CD286F6962003120D2 /* Tunebot.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +130,10 @@
 				Base,
 			);
 			mainGroup = F5A167C4286F6962003120D2;
+			packageReferences = (
+				F5A167E428762759003120D2 /* XCRemoteSwiftPackageReference "swift-log" */,
+				F5A167E7287628D3003120D2 /* XCRemoteSwiftPackageReference "Puppy" */,
+			);
 			productRefGroup = F5A167CE286F6962003120D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A167E3286F6DDA003120D2 /* Tesseract.swift in Sources */,
 				F5A167D3286F6962003120D2 /* ContentView.swift in Sources */,
 				F5A167D1286F6962003120D2 /* TunebotApp.swift in Sources */,
 			);
@@ -339,6 +363,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F5A167E428762759003120D2 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		F5A167E7287628D3003120D2 /* XCRemoteSwiftPackageReference "Puppy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sushichop/Puppy";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F5A167E528762759003120D2 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5A167E428762759003120D2 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		F5A167E8287628D3003120D2 /* Puppy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5A167E7287628D3003120D2 /* XCRemoteSwiftPackageReference "Puppy" */;
+			productName = Puppy;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F5A167C5286F6962003120D2 /* Project object */;
 }
